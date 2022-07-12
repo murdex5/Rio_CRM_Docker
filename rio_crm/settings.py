@@ -75,12 +75,8 @@ WSGI_APPLICATION = 'rio_crm.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('postgres'),
-        'USER': os.environ.get('postgres'),
-        'PASSWORD': os.environ.get('postgres'),
-        'HOST': 'db',
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 
