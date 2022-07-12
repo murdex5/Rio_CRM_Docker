@@ -25,7 +25,7 @@ SECRET_KEY = 'mx25d7cmyrgs6v(8v(u*m7-^51u7%ixuoflzb96v$c!u!ng7v_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'rio_crm.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('postgres'),
+        'USER': os.environ.get('postgres'),
+        'PASSWORD': os.environ.get('postgres'),
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
